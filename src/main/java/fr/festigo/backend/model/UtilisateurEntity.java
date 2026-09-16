@@ -1,0 +1,54 @@
+package fr.festigo.backend.model;
+
+import fr.festigo.backend.enums.Role;
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "utilisateur")
+public class UtilisateurEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String email;
+
+    private String motDePasseHash;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    public UtilisateurEntity() {}
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMotDePasseHash() {
+        return motDePasseHash;
+    }
+
+    public void setMotDePasseHash(String motDePasseHash) {
+        this.motDePasseHash = motDePasseHash;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+}
